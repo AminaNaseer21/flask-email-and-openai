@@ -9,6 +9,7 @@ createspeech_blueprint = Blueprint('createspeech', __name__)
 def createspeech():
     form = CreatespeechForm(request.form)
 
+
     if request.method == 'POST' and form.validate():
         # Ensure you have set the OpenAI API key elsewhere in your application
         response = openai.Audio.create(
